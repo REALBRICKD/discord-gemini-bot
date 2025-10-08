@@ -13,9 +13,5 @@ class Inspirobot(commands.Cog):
         response = requests.get(url)
         await ctx.send(response.text)
 
-class db(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-
 async def setup(bot):
     await bot.add_cog(Inspirobot(bot))

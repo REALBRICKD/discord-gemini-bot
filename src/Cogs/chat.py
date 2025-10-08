@@ -12,15 +12,14 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 botid = os.getenv("BOT_ID")
 database = sqlite3.connect('messagehistory.db')
 cursor = database.cursor()
-# database.execute("CREATE TABLE IF NOT EXISTS messages(user_id INT, message_content STRING, bot_response STRING)")
 
-class CogChat(commands.Cog):
+class Chat(commands.Cog):
     client = None
     def __init__(self, bot):
         self.bot = bot
         self.client = genai.Client(api_key=API_KEY)
 
-    @commands.command(name="chat", help="UNDER CONSTRUCTION: just says hi for now")
+    @commands.command(name="chat", help="Will respond to anything you ask it.")
     async def chat(self, ctx):
         # respond with Gemini API
         history = self.getMsgHistory(ctx.author.id)
@@ -43,9 +42,5 @@ class CogChat(commands.Cog):
         # Returns a list of (user_message, bot_response) tuples
         return rows
 
-class db(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-
 async def setup(bot):
-    await bot.add_cog(CogChat(bot))
+    await bot.add_cog(Chat(bot))

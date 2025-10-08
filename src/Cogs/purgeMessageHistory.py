@@ -4,13 +4,13 @@ import sqlite3
 
 database = sqlite3.connect('messagehistory.db')
 cursor = database.cursor()
-database.execute("CREATE TABLE IF NOT EXISTS messages(user_id INT, message_content STRING)")
+database.execute("CREATE TABLE IF NOT EXISTS messages(user_id INT, message_content STRING, bot_response STRING)")
 
 class CogPurge(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="purgeMessageHistory", help="Purges message history.")
+    @commands.command(name="purgemessagehistory", help="Purges message history.")
     async def purgeMessageHistory(self, ctx):
         query = "DELETE FROM messages WHERE user_id = ?"
         cursor.execute(query, (ctx.author.id, ))

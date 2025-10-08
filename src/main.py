@@ -21,6 +21,15 @@ database = sqlite3.connect('messagehistory.db')
 cursor = database.cursor()
 database.execute("CREATE TABLE IF NOT EXISTS messages(user_id INT, message_content STRING)")        
 
+"""
+@bot.listen("on_command")
+async def log_command(ctx):
+    # Save user ID and message content every time a command is called
+    query = "INSERT INTO messages (user_id, message_content) VALUES (?, ?)"
+    cursor.execute(query, (ctx.author.id, ctx.message.content))
+    database.commit()
+"""
+
 @bot.event
 async def on_ready():
     for filename in os.listdir("src/Cogs"):

@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\Cogs\chat.py" />
+    <Compile Include="src\Cogs\purgeMessageHistory.py" />
     <Compile Include="src\Gemini_Client\geminiclient.py" />
     <Compile Include="Database\databaseclient.py" />
     <Compile Include="src\main.py" />

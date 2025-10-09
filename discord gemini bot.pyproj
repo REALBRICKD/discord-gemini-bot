@@ -22,10 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\Cogs\chat.py" />
-    <Compile Include="src\Cogs\inspirobot.py" />
-    <Compile Include="src\Cogs\purgeMessageHistory.py" />
-    <Compile Include="src\Cogs\warframeFarm.py" />
+    <Compile Include="src\cogs\chat.py" />
+    <Compile Include="src\cogs\inspirobot.py" />
+    <Compile Include="src\cogs\purgeMessageHistory.py" />
+    <Compile Include="src\cogs\warframeFarm.py" />
     <Compile Include="src\database\databaseClient.py" />
     <Compile Include="src\bot.py" />
   </ItemGroup>
@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\Cogs\" />
+    <Folder Include="src\cogs\" />
     <Folder Include="src\database\" />
   </ItemGroup>
   <ItemGroup>

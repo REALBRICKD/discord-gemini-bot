@@ -25,9 +25,9 @@ class DatabaseClient:
     # get key data
     def get_msg_history(self, user_id):
         with self._get_connection() as conn:
-            conn.execute("SELECT message_content, bot_response FROM messages WHERE user_id = ?", (user_id,))
+            cursor = conn.execute("SELECT message_content, bot_response FROM messages WHERE user_id = ?", (user_id,))
             conn.commit()
-        rows = conn.fetchall()
+        rows = cursor.fetchall()
         # Returns a list of (user_message, bot_response) tuples
         return rows
 

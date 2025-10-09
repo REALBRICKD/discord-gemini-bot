@@ -3,7 +3,11 @@ import discord
 from discord.ext import commands
 import logging
 from dotenv import load_dotenv
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.database.databaseClient import DatabaseClient
+
 
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
@@ -20,9 +24,9 @@ db_helper = DatabaseClient()
 
 @bot.event
 async def on_ready():
-    for filename in os.listdir("src/Cogs"):
+    for filename in os.listdir("src/cogs"):
         if filename.endswith(".py"):
-            await bot.load_extension(f"src.Cogs.{filename[:-3]}")
+            await bot.load_extension(f"src.cogs.{filename[:-3]}")
     await bot.tree.sync()
     print("Bot is ready!")
 

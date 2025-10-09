@@ -6,7 +6,17 @@ import os
 
 MAX_LEN = 2000
 API_KEY = os.getenv("GEMINI_API_KEY")
-prompt = """
+
+class Warframe_Farm(commands.Cog):
+    client = None
+    def __init__(self, bot):
+        self.bot = bot
+        self.client = genai.Client(api_key=API_KEY)
+
+    @commands.command(name="warframefarm", help="Tells you where best to farm whatever...maybe.")
+    async def warframefarm(self, ctx, prompt):
+        # respond with Gemini API
+        prompt = """
         You are an accurate data analyst who will be given an item, resource, or mod in the game Warframe. 
         You will also be given official sources to pull data from and perform queries within. 
         If it is a site with a search function, utilize that.
@@ -42,18 +52,8 @@ prompt = """
         Location: warframe.market
         Approximate Cost: 8-14 Platinum
         Analysis: This is the approximate current price for a player to trade for the blueprint directly, bypassing relic farming. Prices are subject to change based on supply and demand.
-        """
-
-class Warframe_Farm(commands.Cog):
-    client = None
-    def __init__(self, bot):
-        self.bot = bot
-        self.client = genai.Client(api_key=API_KEY)
-
-    @commands.command(name="warframefarm", help="Tells you where best to farm whatever...maybe.")
-    async def warframefarm(self, ctx, prompt):
-        # respond with Gemini API
-        prompt = prompt + ctx.message.content
+        The item/resource/mod is:
+        """ + ctx.message.content
         response = self.client.models.generate_content(model = "gemini-2.5-pro", contents = prompt)
         reply = response.candidates[0].content.parts[0].text
         for chunk in [reply[i:i+MAX_LEN] for i in range(0, len(reply), MAX_LEN)]:

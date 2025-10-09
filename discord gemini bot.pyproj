@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>df5e5787-9a57-480c-b8dc-ccaa1017de53</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>src\main.py</StartupFile>
+    <StartupFile>src\bot.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,8 +25,9 @@
     <Compile Include="src\Cogs\chat.py" />
     <Compile Include="src\Cogs\inspirobot.py" />
     <Compile Include="src\Cogs\purgeMessageHistory.py" />
-    <Compile Include="src\Cogs\warframefarm.py" />
-    <Compile Include="src\main.py" />
+    <Compile Include="src\Cogs\warframeFarm.py" />
+    <Compile Include="src\database\databaseClient.py" />
+    <Compile Include="src\bot.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
@@ -35,6 +36,7 @@
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\Cogs\" />
+    <Folder Include="src\database\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env1\">

@@ -2,12 +2,9 @@
 import discord
 from discord.ext import commands
 from google import genai
-from google.genai import types
 import os
-from dotenv import load_dotenv
 
 MAX_LEN = 2000
-load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 prompt = """
         You are an accurate data analyst who will be given an item, resource, or mod in the game Warframe. 

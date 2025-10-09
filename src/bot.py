@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 import logging
 from dotenv import load_dotenv
-import sqlite3
+from src.database.databaseClient import DatabaseClient
 
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
@@ -16,9 +16,7 @@ intents.members = True
 bot = commands.Bot(command_prefix="/", intents=intents)
 
 # Database initialization         
-database = sqlite3.connect('messagehistory.db')
-cursor = database.cursor()
-database.execute("CREATE TABLE IF NOT EXISTS messages(user_id INT, message_content STRING, bot_response STRING)")        
+db_helper = DatabaseClient()
 
 @bot.event
 async def on_ready():

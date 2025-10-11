@@ -25,7 +25,11 @@ class Chat(commands.Cog):
         reply = response.candidates[0].content.parts[0].text
         # save to db
         self.db_helper.save_message(ctx.author.id, user_message, reply)
-        await ctx.send(reply)
+        if len(reply) > MAX_LEN:
+            for i in range(0, len(reply), MAX_LEN):
+                await ctx.send(reply[i:i+MAX_LEN])
+        else:
+            await ctx.send(reply)
 
 async def setup(bot):
     await bot.add_cog(Chat(bot))

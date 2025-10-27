@@ -11,7 +11,6 @@ botid = os.getenv("BOT_ID")
 # This is a simple command that allows the user to converse with the Gemini API directly.
 class Chat(commands.Cog):
     client = None
-    # Initialize the cog
     def __init__(self, bot):
         self.bot = bot
         self.client = genai.Client(api_key=API_KEY)
@@ -25,8 +24,13 @@ class Chat(commands.Cog):
         response = self.client.models.generate_content(model = "gemini-2.5-pro", 
                                                        contents = [user_message] + ["previous interactions: "] + history) # respond with Gemini API
         reply = response.candidates[0].content.parts[0].text
-        self.db_helper.save_message(ctx.author.id, user_message, reply) # save to db
-        await ctx.send(reply)
+        # save to db
+        self.db_helper.save_message(ctx.author.id, user_message, reply)
+        if len(reply) > MAX_LEN:
+            for i in range(0, len(reply), MAX_LEN):
+                await ctx.send(reply[i:i+MAX_LEN])
+        else:
+            await ctx.send(reply)
 
 async def setup(bot):
     await bot.add_cog(Chat(bot))

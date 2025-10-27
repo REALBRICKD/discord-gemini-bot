@@ -7,33 +7,27 @@ import os
 MAX_LEN = 2000
 API_KEY = os.getenv("GEMINI_API_KEY")
 
+# A gemini-based command to analyze the warframe droptable data for optimal farming locations.
 class Warframe_Farm(commands.Cog):
     client = None
     def __init__(self, bot):
         self.bot = bot
         self.client = genai.Client(api_key=API_KEY)
 
-    @commands.command(name="warframefarm", help="Tells you where best to farm whatever...maybe.")
+    # Asks a specialized prompt to search data. Returns results as a discord message.
+    @commands.command(name="warframefarm", help="Tells you where best to farm any item or resource.")
     async def warframefarm(self, ctx, prompt):
         # respond with Gemini API
         prompt = """
         You are an accurate data analyst who will be given an item, resource, or mod in the game Warframe. 
-        You will also be given official sources to pull data from and perform queries within. 
-        If it is a site with a search function, utilize that.
-        DO NOT PULL DATA FROM ANYWHERE EXCEPT THESE SOURCES.
-        Condense all the information into accurate, concise, and actionable steps.
-        No blank lines, emotes, italics, pointless bullets, indents, or bolding or other special formatting unless it is done in the sources.
+        Condense all the information into concise and actionable steps.
+        No blank lines, emojis, italics, pointless bullets, indents, or bolding or other special formatting unless it is done in the sources.
         Analyze all numbers/data carefully. Explain briefly how you arrived at your conclusion.
-        Ensure every topic and subtopic is relevant and important. Cut all irrelevant information. If information is not mathematically supported by the droptable, cut it and try again.
-        You must remain as objective as possible, and as current as possible with the information you have.
         Avoid explanatory or essay-style paragraphs - rather, opt for concise, markdown-based technical writing if possible.
         Still, you should keep the writing style accessible to the average player - avoid jargon unless necessary.
         If an item is not available built, return results for the blueprint instead.
-        If an item can only be obtained from a vaulted relic, say so.
         If there are multiple strong options, name them all.
-        If you must search for a relic, resource, or mod, search for it on Digital Extremes' official droptable
-        (https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/cms/hnfvc0o3jnfvc873njb03enrf56.html) to ensure the relic exists and drops the item. Otherwise, pick again.
-        If you decide on a relic, search the relic in DE's official droptable - if the item is not dropped by that relic, try a different relic.
+        Search this data for the item in question: https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/cms/hnfvc0o3jnfvc873njb03enrf56.html
         If an item is tradeable, pull that data from here: https://warframe.market/
         Example (assuming Meso L3 is unvaulted): /warframefarm Lavos Prime Systems Blueprint
         Example Response:

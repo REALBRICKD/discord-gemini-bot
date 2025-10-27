@@ -5,23 +5,27 @@ import logging
 from dotenv import load_dotenv
 import sys
 import os
+# Ensure database is ported correctly.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.database.databaseClient import DatabaseClient
 
-
+# Load environment variables from .env file
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
 
+# Configure intents and logging - intents are essentially bot permissions.
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
+# All commands will be preceded with a /
 bot = commands.Bot(command_prefix="/", intents=intents)
 
 # Database initialization         
 db_helper = DatabaseClient()
 
+# Load cogs. Think of them as command modules.
 @bot.event
 async def on_ready():
     for filename in os.listdir("src/cogs"):
@@ -31,7 +35,7 @@ async def on_ready():
     print("Bot is ready!")
 
 if __name__ == "__main__":
-    print(os.getcwd())
+    print(os.getcwd()) # ensures correct working directory
     
-bot.run(token, log_handler=handler, log_level=logging.DEBUG)
+bot.run(token, log_handler=handler, log_level=logging.DEBUG) #runs bot
 

@@ -18,6 +18,7 @@ Example usage of the /chat command.
 * /purgemessagehistory - Erases all message history of the user. Any messages and bot responses linked to their ID will be removed from the database.
 <br>
 <img width="339" height="140" alt="purgemessagehistory_1" src="https://github.com/user-attachments/assets/728f4314-69bc-4a69-9d6b-8e0552cd08eb" />
+<br>
 
 Example usage of the /purgemessagehistory command.
 <img width="782" height="156" alt="purgemessagehistory_2" src="https://github.com/user-attachments/assets/3f0039fe-9bf4-43d1-824c-31cb91e8a903" />

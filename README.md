@@ -11,7 +11,7 @@ It includes a few commands:
 * /chat - Allows users to converse directly with the gemini API. Any messages and responses are saved in the database to enable continuous conversation - multiple can even take place concurrently.
 <br>
 <img width="1874" height="1157" alt="chat_test" src="https://github.com/user-attachments/assets/35f7668c-815b-40c1-a16f-e8dac75a81c3" />
-
+<br>
 Example usage of the /chat command.
 <br>
 
@@ -21,6 +21,7 @@ Example usage of the /chat command.
 <br>
 
 Example usage of the /purgemessagehistory command.
+<br>
 <img width="782" height="156" alt="purgemessagehistory_2" src="https://github.com/user-attachments/assets/3f0039fe-9bf4-43d1-824c-31cb91e8a903" />
 
 The state of the database after running the /purgemessagehistory command. 

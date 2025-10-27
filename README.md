@@ -12,13 +12,10 @@ It includes a few commands:
 <br>
 <img width="1874" height="1157" alt="chat_test" src="https://github.com/user-attachments/assets/35f7668c-815b-40c1-a16f-e8dac75a81c3" />
 <br>
-Example usage of the /chat command.
+  Example usage of the /chat command.
 <br>
 
 * /purgemessagehistory - Erases all message history of the user. Any messages and bot responses linked to their ID will be removed from the database.
-<br>
-
-The state of the database after running the /purgemessagehistory command. 
 <br>
 
 * /warframefarm - uses a specially engineered prompt to search the official warframe droptables. This allows quick and accessible access to official data and information.

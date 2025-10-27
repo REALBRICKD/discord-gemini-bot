@@ -3,13 +3,11 @@ This project utilizes the [discord.py](https://github.com/Rapptz/discord.py) lib
 A database has been integrated through [sqlite](https://github.com/sqlite/sqlite), which at present stores message history of both the bot and user, and links these interactions to user ID.\
 It includes a few commands:
 * /help - Displays a comprehensive list of every command that can be run by the bot, including descriptions of each command.
-<br>
   Example usage of the /help command.
 <img width="1384" height="708" alt="help_usage" src="https://github.com/user-attachments/assets/71144391-b4df-40af-be2d-a9a548dd6ed2" />
 <br>
 
 * /chat - Allows users to converse directly with the gemini API. Any messages and responses are saved in the database to enable continuous conversation - multiple can even take place concurrently.
-<br>
   Example usage of the /chat command.
 <img width="1874" height="1157" alt="chat_test" src="https://github.com/user-attachments/assets/35f7668c-815b-40c1-a16f-e8dac75a81c3" />
 <br>

@@ -14,5 +14,6 @@ class Purge_Message_History(commands.Cog):
         self.db_helper.delete_user_messages(ctx.author.id)
         await ctx.send("Your message history has been purged.")
 
+# Add cog to bot directory, enabling the command to be called
 async def setup(bot):
     await bot.add_cog(Purge_Message_History(bot))

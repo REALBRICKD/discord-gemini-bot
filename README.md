@@ -21,8 +21,8 @@ It includes a few commands:
 <br>
 
 # Production and Design
-The project contains a database client that performs operations regarding the bot's database. It also has a collection of cogs (think of them as commands) to load and then run when called. \
-Though not as commonly done, this was a deliberate choice on my part, as it allows the bot to be easily expanded...
+The project contains a database client that performs operations regarding the bot's database. It also has a collection of cogs (think of them as commands) to load and then run when called. Though not as commonly done, this was a deliberate choice on my part, as it allows the bot to be easily expanded.
+The bot in its current form is intended for smaller servers or a group of friends, but the scope of this project can be larger with some changes, such as using [mongodb](https://github.com/mongodb/mongo) instead of [sqlite](https://github.com/sqlite/sqlite). \
 
 # Roadmap
 There is ample room for expansion. Some upcoming features include (but are certainly not limited to):

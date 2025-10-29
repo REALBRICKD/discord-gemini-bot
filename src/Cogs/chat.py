@@ -32,5 +32,6 @@ class Chat(commands.Cog):
         else:
             await ctx.send(reply)
 
+# Add cog to bot directory, enabling the command to be called
 async def setup(bot):
     await bot.add_cog(Chat(bot))

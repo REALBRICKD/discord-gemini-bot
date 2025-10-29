@@ -14,5 +14,6 @@ class Inspirobot(commands.Cog):
         response = requests.get(url)
         await ctx.send(response.text)
 
+# Add cog to bot directory, enabling the command to be called
 async def setup(bot):
     await bot.add_cog(Inspirobot(bot))

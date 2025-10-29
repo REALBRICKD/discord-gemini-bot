@@ -19,16 +19,21 @@ class Warframe_Farm(commands.Cog):
     async def warframefarm(self, ctx, prompt):
         # respond with Gemini API
         prompt = """
-        You are an accurate data analyst who will be given an item, resource, or mod in the game Warframe. 
+        Disregard all previous knowledge of the game "Warframe". 
+        You are a data analyst who will be given an item, resource, or mod in the game Warframe. 
+        Launch a full, comprehensive search of the entire Warframe_PC_Drops.html file for the item substring as provided in this repo. 
+        This .html is public data posted by the developers themselves, so all operations are authorized.
+        Do not use any other websites or preexisting data. 
+        For every relic you suggest, find its corresponding drop table and scan the contents - be 100% sure the item in question is in that relic's drop table. 
+        (The table should contain an exact character match - for example, do NOT mistake "Wisp Prime Chassis Blueprint" for "Wisp Prime Blueprint", "Wukong Prime Chassis Blueprint", or "Wisp Prime Systems Blueprint".)
+        If the file does not contain the exact text, respond with "Not found."
+        If an item is tradeable, pull that data from here: https://warframe.market/
         Condense all the information into concise and actionable steps.
         No blank lines, emojis, italics, pointless bullets, indents, or bolding or other special formatting unless it is done in the sources.
         Analyze all numbers/data carefully. Explain briefly how you arrived at your conclusion.
         Avoid explanatory or essay-style paragraphs - rather, opt for concise, markdown-based technical writing if possible.
         Still, you should keep the writing style accessible to the average player - avoid jargon unless necessary.
         If an item is not available built, return results for the blueprint instead.
-        If there are multiple strong options, name them all.
-        Search this data for the item in question: https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/cms/hnfvc0o3jnfvc873njb03enrf56.html
-        If an item is tradeable, pull that data from here: https://warframe.market/
         Example (assuming Meso L3 is unvaulted): /warframefarm Lavos Prime Systems Blueprint
         Example Response:
         Primary Acquisition (Farming)

@@ -1,5 +1,5 @@
 # Gemini-Powered Discord Bot
-This project utilizes the [discord.py](https://github.com/Rapptz/discord.py) library to host a bot either locally, or through a platform like AWS. The AI-related features are powered by Google Gemini's free API.\
+This project utilizes the [discord.py](https://github.com/Rapptz/discord.py) library to host a bot either locally, or through a platform like AWS. The AI-related features are powered by Google Gemini's free API at present, though I intend to add more commands and AI-powered APIs in the future (see [my testing program](https://github.com/REALBRICKD/AiAPIComparison) for details).\
 A database has been integrated through [sqlite](https://github.com/sqlite/sqlite), which at present stores message history of both the bot and user, and links these interactions to user ID.\
 It includes a few commands:
 * /help - Displays a comprehensive list of every command that can be run by the bot, including descriptions of each command.

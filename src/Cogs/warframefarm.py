@@ -58,5 +58,6 @@ class Warframe_Farm(commands.Cog):
         for chunk in [reply[i:i+MAX_LEN] for i in range(0, len(reply), MAX_LEN)]:
             await ctx.send(chunk)
 
+# Add cog to bot directory, enabling the command to be called
 async def setup(bot):
     await bot.add_cog(Warframe_Farm(bot))

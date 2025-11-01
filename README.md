@@ -15,7 +15,7 @@ It includes a few commands:
 * /purgemessagehistory - Erases all message history of the user. Any messages and bot responses linked to their ID will be removed from the database.
 <br>
 
-* /warframefarm - uses a specially engineered prompt to search the official warframe droptables. This allows quick and accessible access to official data and information.
+* /warframefarm - uses a specially engineered prompt to search the official warframe droptables and return live, aggregated data from third-party trading platforms. This allows quick and accessible access to official data and information.
 <br>
 <img width="1879" height="725" alt="Warframefarm_Test" src="https://github.com/user-attachments/assets/4045d2f1-90d2-4c5c-a415-6886eac823f7" />
 <br>

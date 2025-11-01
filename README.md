@@ -27,12 +27,10 @@ The bot in its current form is intended for smaller servers or a group of friend
 # Roadmap
 There is ample room for expansion. Some upcoming features include (but are certainly not limited to):
 * A points system to drive participation on the server the bot is hosted in
-  * Could be additionally expanded to a "game" hosted in the bot
+  * Could be additionally expanded to a "game" hosted in the bot. The database can be utilized for this purpose as well.
 * Integrating multiple AI-powered API's such as grok and deepseek to perform other specialized commands (refer to [AI API Comparison](https://github.com/REALBRICKD/AiAPIComparison) for more details)
 * More utility commands like an editable to-do list corresponding to a user
   
 # Running The Program
-This program cannot be run, as it requires secure information stored in the .env file. Bots written with discord.py are linked to their owners' account tokens, which can leave accounts vulnerable if shared. If this were not the case, simply cloning the repo allows the program to be run in any IDE that supports python.
-
-# Credits
-Thank you to discord for allowing such accessible development of bots on their platform, and to my friends for testing the commands. Another massive thanks to google for allowing access to one of the top free AI APIs at the moment!
+This program cannot be directly clones and run, as it requires secure information stored in the .env file. Bots written with discord.py are linked to their owners' account tokens, which can leave accounts vulnerable if shared. \
+Assuming one had the .env file containing the Discord account token and the Gemini API key, simply cloning the repo allows the program to be run in any IDE that supports python.

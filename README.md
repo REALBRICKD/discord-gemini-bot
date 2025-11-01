@@ -32,5 +32,5 @@ There is ample room for expansion. Some upcoming features include (but are certa
 * More utility commands like an editable to-do list corresponding to a user
   
 # Running The Program
-This program cannot be directly clones and run, as it requires secure information stored in the .env file. Bots written with discord.py are linked to their owners' account tokens, which can leave accounts vulnerable if shared. \
+This program cannot be directly cloned and run, as it requires secure information stored in the .env file. Bots written with discord.py are linked to their owners' account tokens, which can leave accounts vulnerable if shared. \
 Assuming one had the .env file containing the Discord account token and the Gemini API key, simply cloning the repo allows the program to be run in any IDE that supports python.
